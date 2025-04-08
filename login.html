@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tela de Login</title>
+    <style>
+
+        .imagen{
+            background: #4096d8;
+         
+        } 
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 300px;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 8px 20px;
+        }
+
+        #mensagem-login {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="imagen">
+
+    <h1>Login</h1>
+    <form id="login-form">
+        <label for="login-usuario">ID do Usuário</label>
+        <input type="text" id="login-usuario" required>
+
+        <label for="login-senha">Senha</label>
+        <input type="password" id="login-senha" required>
+
+        <input type="submit" value="Entrar">
+    </form>
+
+    <p id="mensagem-login"></p>
+
+    <p><a href="forms.html" style="color: bisque;">Não tem conta? Cadastre-se aqui</a></p>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const usuario = document.getElementById("login-usuario").value;
+            const senha = document.getElementById("login-senha").value;
+
+            const usuarioSalvo = localStorage.getItem("usuario");
+            const senhaSalva = localStorage.getItem("senha");
+
+            const mensagem = document.getElementById("mensagem-login");
+
+            if (usuario === usuarioSalvo && senha === senhaSalva) {
+                mensagem.textContent = "✅ Login realizado com sucesso!";
+                mensagem.style.color = "green";
+            } else {
+                mensagem.textContent = "❌ Usuário ou senha incorretos.";
+                mensagem.style.color = "red";
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
