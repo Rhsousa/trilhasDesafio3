@@ -40,3 +40,12 @@ ou usar o qr-code para vizualizar no celular
 - Vanila (JavaScript): Validação de formulários, manipulação de eventos e armazenamento de dados no localStorage.
 
 
+## páginas
+
+- Cadastro
+
+![cadastro](page-cadastro.png)
+
+- Login
+
+![login](page-login.png)
